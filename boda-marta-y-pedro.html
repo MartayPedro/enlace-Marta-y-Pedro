@@ -64,6 +64,17 @@
             90% { opacity: 0.6; }
             100% { transform: translateY(110vh) rotate(360deg); left: 90%; opacity: 0; }
         }
+
+        /* Escalado de tipografía SOLO en escritorio (PC). El móvil se mantiene igual. */
+        /* Se antepone "body" para ganar en especificidad a los estilos que Tailwind inyecta en runtime. */
+        @media (min-width: 1024px) {
+            body [class*="text-[8px]"]  { font-size: 11px !important; }
+            body [class*="text-[9px]"]  { font-size: 12px !important; }
+            body [class*="text-[10px]"] { font-size: 13.5px !important; }
+            body .text-xs   { font-size: 0.95rem !important; line-height: 1.6 !important; }
+            body .text-sm   { font-size: 1.05rem !important; line-height: 1.6 !important; }
+            body .text-base { font-size: 1.15rem !important; }
+        }
     </style>
 </head>
 <body class="bg-weddingBeige font-sans text-weddingDark leading-relaxed overflow-x-hidden">
